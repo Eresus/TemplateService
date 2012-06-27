@@ -26,7 +26,7 @@
  *
  * @package TemplateService
  *
- * $Id: myplugin.php 1849 2011-10-03 17:34:22Z mk $
+ * $Id$
  */
 
 /**
@@ -39,37 +39,41 @@ class TemplateService extends Plugin
 	/**
 	 * Версия плагина
 	 * @var string
+	 * @since 1.00
 	 */
 	public $version = '${product.version}';
 
 	/**
 	 * Требуемая версия ядра
 	 * @var string
+	 * @since 1.00
 	 */
 	public $kernel = '3.00b';
 
 	/**
 	 * Название плагина
 	 * @var string
+	 * @since 1.00
 	 */
 	public $title = 'Служба шаблонов';
 
 	/**
 	 * Описание плагина
 	 * @var string
+	 * @since 1.00
 	 */
 	public $description = 'Может использоваться другими расширениями';
 
 	/**
 	 * Путь к корневой директории шаблонов
 	 * @var string
+	 * @since 1.00
 	 */
 	private $rootDir;
 
 	/**
 	 * Конструктор
-	 *
-	 * @return GoodsCatalogTemplateService
+	 * @since 1.00
 	 */
 	public function __construct()
 	{
@@ -82,10 +86,11 @@ class TemplateService extends Plugin
 	 * Возвращает экземпляр класса
 	 *
 	 * @return TemplateService
+	 * @since 1.00
 	 */
 	public static function &getInstance()
 	{
-		return $GLOBALS['Eresus']->load('templateservice');
+		return $GLOBALS['Eresus']->plugins->load('templateservice');
 	}
 	//-----------------------------------------------------------------------------
 
@@ -97,6 +102,9 @@ class TemplateService extends Plugin
 	 *
 	 * @throws TemplateService_InvalidPathException  если указан неправильный путь
 	 * @throws TemplateService_PathExistsException  если $path уже существует
+	 * @throws TemplateService_Exception  если не удаётся создать папку
+	 *
+	 * @since 1.00
 	 */
 	public function installTemplates($sourceDir, $targetPath)
 	{
@@ -148,6 +156,8 @@ class TemplateService extends Plugin
 	 * @param string $path  путь к шаблону или директории относительно общей директории шаблонов
 	 *
 	 * @throws TemplateService_InvalidPathException  если указан неправильный путь
+	 *
+	 * @since 1.00
 	 */
 	public function uninstallTemplates($path)
 	{
@@ -205,6 +215,8 @@ class TemplateService extends Plugin
 	 * @throws TemplateService_InvalidPathException
 	 *
 	 * @return string
+	 *
+	 * @since 1.00
 	 */
 	public function getContents($name, $prefix = '')
 	{
@@ -231,6 +243,8 @@ class TemplateService extends Plugin
 	 * @throws TemplateService_InvalidPathException
 	 *
 	 * @return void
+	 *
+	 * @since 1.00
 	 */
 	public function setContents($contents, $name, $prefix = '')
 	{
@@ -252,6 +266,8 @@ class TemplateService extends Plugin
 	 * @param string $prefix  опциональный префикс (путь относительно корня шаблонов)
 	 *
 	 * @return string
+	 *
+	 * @since 1.00
 	 */
 	public function getFilename($name, $prefix = '')
 	{
@@ -274,6 +290,8 @@ class TemplateService extends Plugin
 	 * @throws TemplateService_InvalidPathException
 	 *
 	 * @return Template
+	 *
+	 * @since 1.00
 	 */
 	public function getTemplate($name, $prefix = '')
 	{

@@ -26,7 +26,7 @@
  *
  * @package TemplateService
  *
- * $Id: myplugin.php 1849 2011-10-03 17:34:22Z mk $
+ * $Id$
  */
 
 
