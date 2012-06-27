@@ -78,7 +78,7 @@ class TemplateService extends Plugin
 	public function __construct()
 	{
 		parent::__construct();
-		$this->rootDir = $GLOBALS['Eresus']->froot . 'templates';
+		$this->rootDir = Eresus_CMS::getLegacyKernel()->froot . 'templates';
 	}
 	//-----------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ class TemplateService extends Plugin
 	 */
 	public static function &getInstance()
 	{
-		return $GLOBALS['Eresus']->plugins->load('templateservice');
+		return Eresus_CMS::getLegacyKernel()->plugins->load('templateservice');
 	}
 	//-----------------------------------------------------------------------------
 
