@@ -80,7 +80,6 @@ class TemplateService extends Plugin
 		parent::__construct();
 		$this->rootDir = Eresus_CMS::getLegacyKernel()->froot . 'templates';
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Возвращает экземпляр класса
@@ -92,7 +91,6 @@ class TemplateService extends Plugin
 	{
 		return Eresus_CMS::getLegacyKernel()->plugins->load('templateservice');
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Устанавливает шаблоны в общую директорию шаблонов
@@ -148,7 +146,6 @@ class TemplateService extends Plugin
 			chmod($target, 0666);
 		}
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Удаляет установленные ранее шаблоны
@@ -181,6 +178,7 @@ class TemplateService extends Plugin
 			$dirs = array();
 			foreach ($branch as $file)
 			{
+				/** @var SplFileInfo $file */
 				if ($file->isDir())
 				{
 					$dirs []= $file->getPathname();
@@ -204,7 +202,6 @@ class TemplateService extends Plugin
 			rmdir($path);
 		}
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Возвращает содержимое шаблона
@@ -231,7 +228,6 @@ class TemplateService extends Plugin
 
 		return $contents;
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Записывает содержимое шаблона
@@ -257,7 +253,6 @@ class TemplateService extends Plugin
 
 		@file_put_contents($path, $contents);
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Возвращает путь к файлу шаблона
@@ -279,7 +274,6 @@ class TemplateService extends Plugin
 
 		return $path;
 	}
-	//-----------------------------------------------------------------------------
 
 	/**
 	 * Возвращает объект шаблона
@@ -306,7 +300,5 @@ class TemplateService extends Plugin
 
 		return $tmpl;
 	}
-	//-----------------------------------------------------------------------------
-
 }
 
