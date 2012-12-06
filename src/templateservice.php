@@ -48,7 +48,7 @@ class TemplateService extends Plugin
 	 * @var string
 	 * @since 1.00
 	 */
-	public $kernel = '3.00b';
+	public $kernel = '3.00';
 
 	/**
 	 * Название плагина
@@ -99,7 +99,7 @@ class TemplateService extends Plugin
 	 * @param string $targetPath  путь относительно общей директории шаблонов
 	 *
 	 * @throws TemplateService_InvalidPathException  если указан неправильный путь
-	 * @throws TemplateService_PathExistsException  если $path уже существует
+	 * @throws TemplateService_PathExistsException  если $targetPath уже существует
 	 * @throws TemplateService_Exception  если не удаётся создать папку
 	 *
 	 * @since 1.00
