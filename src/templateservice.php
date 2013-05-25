@@ -4,9 +4,9 @@
  *
  * @version ${product.version}
  *
- * @copyright 2012, Михаил Красильников <mihalych@vsepofigu.ru>
+ * @copyright 2012, Михаил Красильников <m.krasilnikov@yandex.ru>
  * @license http://www.gnu.org/licenses/gpl.txt GPL License 3
- * @author Михаил Красильников <mihalych@vsepofigu.ru>
+ * @author Михаил Красильников <m.krasilnikov@yandex.ru>
  *
  * Данная программа является свободным программным обеспечением. Вы
  * вправе распространять ее и/или модифицировать в соответствии с
@@ -131,11 +131,6 @@ class TemplateService extends Plugin
 
         $templates = new RegexIterator(new DirectoryIterator($sourceDir),
             '/^.*\.html$/', RegexIterator::GET_MATCH);
-        /*
-         * Начиная с PHP 5.3.0 можно будет использовать GlobIterator:
-         * GlobIterator($sourceDir . '/*.html', FilesystemIterator::KEY_AS_PATHNAME);
-         */
-
         foreach ($templates as $template)
         {
             $target = $targetPath . '/' . basename($template[0]);
@@ -177,6 +172,10 @@ class TemplateService extends Plugin
             foreach ($branch as $file)
             {
                 /** @var SplFileInfo $file */
+                if (preg_match('/^\.{1,2}$/', $file->getFilename()))
+                {
+                    continue;
+                }
                 if ($file->isDir())
                 {
                     $dirs []= $file->getPathname();

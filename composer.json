@@ -10,6 +10,7 @@
     ],
     "require":
     {
-        "mekras/test-doubles": "dev-master"
+        "mekras/test-doubles": "dev-master",
+        "mikey179/vfsStream": "v1.2.0"
     }
 }
