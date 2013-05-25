@@ -1,0 +1,16 @@
+{
+    "name": "eresus/template-service",
+    "description": "Модуль «Служба шаблонов» для Eresus CMS",
+    "authors":
+    [
+        {
+            "name": "Михаил Красильников",
+            "email": "m.krasilnikov@yandex.ru"
+        }
+    ],
+    "require":
+    {
+        "mekras/test-doubles": "dev-master",
+        "mikey179/vfsStream": "v1.2.0"
+    }
+}
