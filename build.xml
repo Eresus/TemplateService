@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
- Сборочный файл для TemplateService
-
- $Id: build.xml 2172 2012-05-17 18:40:30Z mk $
- -->
 
 <project name="templateservice" default="build" basedir="./">
 
@@ -28,7 +23,7 @@
 
 	<!--
 	=====================================================================
-	Модульные тесы
+	Модульные тесты
 	=====================================================================
 	-->
 	<target name="tests" description="Run unit tests">
